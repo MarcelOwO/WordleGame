@@ -69,38 +69,46 @@ public partial class MainWindow : Window
         AllowedKeys.Add(Key.Z);
 
             
-            
-        var KeyList= new List<KeyboardItem>();
-        KeyList.Add(new KeyboardItem(){KeyName = "A",Key = Key.A, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "B",Key = Key.B, Row = 2, Column = 5});
-        KeyList.Add(new KeyboardItem(){KeyName = "C",Key = Key.C, Row = 2, Column = 3});
-        KeyList.Add(new KeyboardItem(){KeyName = "D",Key = Key.D, Row = 1, Column = 2});
-        KeyList.Add(new KeyboardItem(){KeyName = "E",Key = Key.E, Row = 0, Column = 2});
-        KeyList.Add(new KeyboardItem(){KeyName = "F",Key = Key.F, Row = 1, Column = 3});
-        KeyList.Add(new KeyboardItem(){KeyName = "G",Key = Key.G, Row = 1, Column = 4});
-        KeyList.Add(new KeyboardItem(){KeyName = "H",Key = Key.H, Row = 1, Column = 5});
-        KeyList.Add(new KeyboardItem(){KeyName = "I",Key = Key.I, Row = 1, Column = 7});
-        KeyList.Add(new KeyboardItem(){KeyName = "J",Key = Key.J, Row = 1, Column = 6});
-        KeyList.Add(new KeyboardItem(){KeyName = "K",Key = Key.K, Row = 1, Column = 7});
-        KeyList.Add(new KeyboardItem(){KeyName = "L",Key = Key.L, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "M",Key = Key.M, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "N",Key = Key.N, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "O",Key = Key.O, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "P",Key = Key.P, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "Q",Key = Key.Q, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "R",Key = Key.R, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "S",Key = Key.S, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "T",Key = Key.T, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "U",Key = Key.U, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "V",Key = Key.V, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "W",Key = Key.W, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "X",Key = Key.X, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "Y",Key = Key.Y, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "Z",Key = Key.Z, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "Enter",Key = Key.Enter, Row = 1, Column = 0});
-        KeyList.Add(new KeyboardItem(){KeyName = "Delete",Key = Key.Back, Row = 1, Column = 0});
+        var KeyListRow0= new List<KeyboardItem>();
+        var KeyListRow1= new List<KeyboardItem>();  
+        var KeyListRow2= new List<KeyboardItem>();  
+        
 
-        KeyBoard.ItemsSource = KeyList;
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "E",Key = Key.E, Row = 0, Column = 2});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "I",Key = Key.I, Row = 0, Column = 7});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "O",Key = Key.O, Row = 0, Column = 8});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "P",Key = Key.P, Row = 0, Column = 9});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "Q",Key = Key.Q, Row = 0, Column = 0});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "R",Key = Key.R, Row = 0, Column = 3});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "T",Key = Key.T, Row = 0, Column = 4});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "U",Key = Key.U, Row = 0, Column = 6});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "W",Key = Key.W, Row = 0, Column = 1});
+        KeyListRow0.Add(new KeyboardItem(){KeyName = "Y",Key = Key.Y, Row = 0, Column = 5});
+        
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "A",Key = Key.A, Row = 1, Column = 0, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "D",Key = Key.D, Row = 1, Column = 2, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "F",Key = Key.F, Row = 1, Column = 3, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "G",Key = Key.G, Row = 1, Column = 4, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "H",Key = Key.H, Row = 1, Column = 5, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "J",Key = Key.J, Row = 1, Column = 6, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "K",Key = Key.K, Row = 1, Column = 7, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "L",Key = Key.L, Row = 1, Column = 8, Margin = new Thickness(15,2,-10,2)});
+        KeyListRow1.Add(new KeyboardItem(){KeyName = "S",Key = Key.S, Row = 1, Column = 1, Margin = new Thickness(15,2,-10,2)});
+        
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "B",Key = Key.B, Row = 2, Column = 5});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "C",Key = Key.C, Row = 2, Column = 3});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "V",Key = Key.V, Row = 2, Column = 4});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "X",Key = Key.X, Row = 2, Column = 2});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "M",Key = Key.M, Row = 2, Column = 7});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "N",Key = Key.N, Row = 2, Column = 6});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "Z",Key = Key.Z, Row = 2, Column = 1});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "Enter",Key = Key.Enter, Row = 2, Column = 0,Width = 55});
+        KeyListRow2.Add(new KeyboardItem(){KeyName = "Del",Key = Key.Back, Row = 2, Column = 8,Width = 55});
+
+
+        KeyBoard0.ItemsSource = KeyListRow0;
+        KeyBoard1.ItemsSource = KeyListRow1;
+        KeyBoard2.ItemsSource = KeyListRow2;
 
     }
     
@@ -455,4 +463,7 @@ public class KeyboardItem
     public System.Windows.Input.Key Key { get; set; }
     public int Row { get; set; }
     public int Column { get; set; }
+    
+    public int Width { get; set; } = 35;
+    public Thickness Margin { get; set; } = new Thickness(2,2,2,2);
 }
