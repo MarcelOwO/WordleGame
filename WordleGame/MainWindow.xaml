@@ -1,0 +1,138 @@
+﻿<Window x:Class="WordleGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordleGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400">
+    <Grid>
+        <Grid Background="#222222">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="52"/>
+                <ColumnDefinition Width="52"/>
+                <ColumnDefinition Width="52"/>
+                <ColumnDefinition Width="52"/>
+                <ColumnDefinition Width="52"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            
+          
+            
+            
+             <Border Name="Box00" Grid.Row="1" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle00" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box01" Grid.Row="1" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                <TextBlock Name="Rectangle01" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box02" Grid.Row="1" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle02" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box03" Grid.Row="1" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle03" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box04" Grid.Row="1" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle04" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+            
+            
+             <Border Name="Box10" Grid.Row="2" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle10" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box11" Grid.Row="2" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle11" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box12" Grid.Row="2" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle12" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box13" Grid.Row="2" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle13" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box14" Grid.Row="2" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle14" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+            
+            
+             <Border Name="Box20" Grid.Row="3" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle20" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box21" Grid.Row="3" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle21" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box22" Grid.Row="3" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle22" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box23" Grid.Row="3" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle23" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box24" Grid.Row="3" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle24" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+            
+           
+             <Border Name="Box30" Grid.Row="4" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle30" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box31" Grid.Row="4" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle31" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box32" Grid.Row="4" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle32" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box33" Grid.Row="4" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle33" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box34" Grid.Row="4" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle34" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+            
+            
+             <Border Name="Box40" Grid.Row="5" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle40" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box41" Grid.Row="5" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle41" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box42" Grid.Row="5" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle42" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box43" Grid.Row="5" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle43" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box44" Grid.Row="5" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle44" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+            
+           
+             <Border Name="Box50" Grid.Row="6" Grid.Column="1" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle50" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box51" Grid.Row="6" Grid.Column="2" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle51" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box52" Grid.Row="6" Grid.Column="3" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle52" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box53" Grid.Row="6" Grid.Column="4" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle53" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+             <Border Name="Box54" Grid.Row="6" Grid.Column="5" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
+                 <TextBlock Name="Rectangle54" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+             </Border>
+            
+        </Grid>
+    </Grid>
+</Window>
