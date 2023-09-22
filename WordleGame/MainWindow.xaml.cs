@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Printing;
+using System.Runtime.InteropServices.JavaScript;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -66,7 +67,41 @@ public partial class MainWindow : Window
         AllowedKeys.Add(Key.X);
         AllowedKeys.Add(Key.Y);
         AllowedKeys.Add(Key.Z);
-        
+
+            
+            
+        var KeyList= new List<KeyboardItem>();
+        KeyList.Add(new KeyboardItem(){KeyName = "A",Key = Key.A, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "B",Key = Key.B, Row = 2, Column = 5});
+        KeyList.Add(new KeyboardItem(){KeyName = "C",Key = Key.C, Row = 2, Column = 3});
+        KeyList.Add(new KeyboardItem(){KeyName = "D",Key = Key.D, Row = 1, Column = 2});
+        KeyList.Add(new KeyboardItem(){KeyName = "E",Key = Key.E, Row = 0, Column = 2});
+        KeyList.Add(new KeyboardItem(){KeyName = "F",Key = Key.F, Row = 1, Column = 3});
+        KeyList.Add(new KeyboardItem(){KeyName = "G",Key = Key.G, Row = 1, Column = 4});
+        KeyList.Add(new KeyboardItem(){KeyName = "H",Key = Key.H, Row = 1, Column = 5});
+        KeyList.Add(new KeyboardItem(){KeyName = "I",Key = Key.I, Row = 1, Column = 7});
+        KeyList.Add(new KeyboardItem(){KeyName = "J",Key = Key.J, Row = 1, Column = 6});
+        KeyList.Add(new KeyboardItem(){KeyName = "K",Key = Key.K, Row = 1, Column = 7});
+        KeyList.Add(new KeyboardItem(){KeyName = "L",Key = Key.L, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "M",Key = Key.M, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "N",Key = Key.N, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "O",Key = Key.O, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "P",Key = Key.P, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "Q",Key = Key.Q, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "R",Key = Key.R, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "S",Key = Key.S, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "T",Key = Key.T, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "U",Key = Key.U, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "V",Key = Key.V, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "W",Key = Key.W, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "X",Key = Key.X, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "Y",Key = Key.Y, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "Z",Key = Key.Z, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "Enter",Key = Key.Enter, Row = 1, Column = 0});
+        KeyList.Add(new KeyboardItem(){KeyName = "Delete",Key = Key.Back, Row = 1, Column = 0});
+
+        KeyBoard.ItemsSource = KeyList;
+
     }
     
     void MainWindow_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -124,19 +159,50 @@ public partial class MainWindow : Window
 
     void SetColor(string guess)
     {
-        char[] sol = Solution.ToArray();
+        char[] solutionArray = Solution.ToArray();
         
-        char[] gue = guess.ToArray();
+        char[] guessArray = guess.ToArray();
 
-        foreach (var character in guess)
+        var uniqeCharacterandcount = new Dictionary<char, int>();
+        
+        foreach (var c in guess)
         {
-            Console.WriteLine("checking " + character); 
-            if (sol.Contains(character))
+            if (uniqeCharacterandcount.ContainsKey(c))
             {
-                Console.WriteLine("found " + character);
-                SetColors((CurrentPos.Item1, Array.IndexOf(gue, character)), Brushes.DarkGoldenrod);
+                uniqeCharacterandcount[c]=uniqeCharacterandcount[c]++;
+            }
+            else
+            {
+                uniqeCharacterandcount.Add(c,1);
             }
         }
+        
+        for (int i = 0; i < 5; i++)
+        {
+            
+            if (!solutionArray.Contains(guessArray[i]))
+                continue;
+            
+            if (solutionArray[i] == guessArray[i])
+            {
+                SetColors((CurrentPos.Item1, i), Brushes.Green);
+                continue;
+            }
+            
+            if(uniqeCharacterandcount[guessArray[i]]==0)
+                continue;
+            
+
+            
+            
+            SetColors((CurrentPos.Item1,i), Brushes.DarkGoldenrod);
+            
+            uniqeCharacterandcount[guessArray[i]] = uniqeCharacterandcount[guessArray[i]]-1;
+            
+        }
+        
+
+       
     }
     void SetColors((int,int) pos,Brush color)
     {
@@ -364,8 +430,6 @@ public partial class MainWindow : Window
                 case 2: //solution
                     MessageBox.Show("Correct! You win!");
                     SetColor(guess);
-                    Thread.Sleep(1000);
-                    Application.Current.Shutdown();
                     return true;
                 
                 default:
@@ -382,4 +446,13 @@ public partial class MainWindow : Window
             }
             
         }
+}
+
+
+public class KeyboardItem
+{
+    public string KeyName { get; set; }
+    public System.Windows.Input.Key Key { get; set; }
+    public int Row { get; set; }
+    public int Column { get; set; }
 }
