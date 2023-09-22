@@ -186,7 +186,7 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                        <Border  Background="Gray" Height="45" Width="35" CornerRadius="7" Margin="2">
+                        <Border Background="{Binding Color}" Height="45" Width="35" CornerRadius="7" Margin="2">
                             <TextBlock Text="{Binding KeyName}" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                 </DataTemplate>
@@ -226,7 +226,7 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border  Background="Gray" Height="45" Width="35" CornerRadius="7" Margin="{Binding Margin}">
+                    <Border  Background="{Binding Color}" Height="45" Width="35" CornerRadius="7" Margin="{Binding Margin}">
                         <TextBlock Text="{Binding KeyName}" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </DataTemplate>
@@ -266,7 +266,7 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border  Background="Gray" Height="45" Width="{Binding Width}" CornerRadius="7" Margin="2">
+                    <Border  Background="{Binding Color}" Height="45" Width="{Binding Width}" CornerRadius="7" Margin="2">
                         <TextBlock Text="{Binding KeyName}" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </DataTemplate>

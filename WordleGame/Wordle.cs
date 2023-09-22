@@ -16,9 +16,9 @@ public class Wordle
     public Wordle()
     {
         
-        String Filelocation = Path.Combine(Environment.CurrentDirectory,"words_alpha.txt");
+        String filelocation = Path.Combine(Environment.CurrentDirectory,"words_alpha.txt");
         
-        string[] intermediate = File.ReadAllLines(Filelocation);
+        string[] intermediate = File.ReadAllLines(filelocation);
         List<String> buffer = new();
 
         foreach (var word in intermediate)
