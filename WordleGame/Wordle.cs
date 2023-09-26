@@ -1,5 +1,8 @@
 ﻿using System.IO;
 using System.Reflection;
+using System.Windows;
+using System.Windows.Resources;
+using Microsoft.VisualBasic;
 
 namespace WordleGame;
 
@@ -15,25 +18,32 @@ public class Wordle
 
     public Wordle()
     {
-        String filelocation = Path.Combine(Environment.CurrentDirectory, "words_alpha.txt");
+        Uri uri = new Uri("/words_alpha.txt", UriKind.Relative);
+        StreamResourceInfo info = Application.GetResourceStream(uri);
+        Stream stream = info.Stream;
+        StreamReader reader = new StreamReader(stream);
+        
+        List<string> buffer = new List<string>();
 
-        string[] intermediate = File.ReadAllLines(filelocation);
-        List<String> buffer = new();
-
-        foreach (var word in intermediate)
+        while (!reader.EndOfStream)
         {
+            string word = reader.ReadLine();
+
+            word = word.Trim();
+
             if (word.Length == 5)
             {
                 buffer.Add(word);
             }
         }
+        reader.Close();
+        stream.Close();
 
         PossibleWords = buffer.ToArray();
 
         Random rnd = new Random();
 
         Solution = PossibleWords[rnd.Next(PossibleWords.Length)];
-        Console.WriteLine(Solution);
     }
 
 

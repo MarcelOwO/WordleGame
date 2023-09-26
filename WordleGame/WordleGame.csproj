@@ -6,24 +6,21 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>wordle.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
       <Page Include="words_alpha.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Page>
-      <Resource Include="words_alpha.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="wordle.ico" />
+
       <Resource Include="wordle.ico" />
+
+      <None Remove="words_alpha.txt" />
+
+      <Resource Include="words_alpha.txt" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="words_alpha.txt" />
-      <Content Include="words_alpha.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
+
 
 </Project>
