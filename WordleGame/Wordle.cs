@@ -12,12 +12,11 @@ public class Wordle
     {
         return Solution;
     }
-    
+
     public Wordle()
     {
-        
-        String filelocation = Path.Combine(Environment.CurrentDirectory,"words_alpha.txt");
-        
+        String filelocation = Path.Combine(Environment.CurrentDirectory, "words_alpha.txt");
+
         string[] intermediate = File.ReadAllLines(filelocation);
         List<String> buffer = new();
 
@@ -31,32 +30,28 @@ public class Wordle
 
         PossibleWords = buffer.ToArray();
 
-        
         Random rnd = new Random();
-        
+
         Solution = PossibleWords[rnd.Next(PossibleWords.Length)];
         Console.WriteLine(Solution);
     }
-    
-    
+
+
     public int CheckGuess(string guess)
     {
         //0 = invalid
         //1 = valid but not solution
         //2 = solution
-        
+
         if (guess == Solution)
             return 2;
-        
+
         foreach (var word in PossibleWords)
         {
             if (word == guess)
                 return 1;
         }
-        
-        return 0;
-        
-    }
 
-    
+        return 0;
+    }
 }

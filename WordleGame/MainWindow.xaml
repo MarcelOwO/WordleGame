@@ -3,242 +3,80 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WordleGame"
         mc:Ignorable="d"
         Title="Wordle" Height="650" Width="500">
+    <Window.Icon>
+        <BitmapImage UriSource="wordle.ico" />
+    </Window.Icon>
     <Grid Background="#222222">
         <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
-            <RowDefinition Height="400"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="400" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="150" />
         </Grid.RowDefinitions>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        
-        <TextBlock Text="Wordle" Grid.Column="1" FontSize="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0"/>
 
-        <Grid  Grid.Row="1" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70"/>
-                <ColumnDefinition Width="52"/>
-                <ColumnDefinition Width="52"/>
-                <ColumnDefinition Width="52"/>
-                <ColumnDefinition Width="52"/>
-                <ColumnDefinition Width="52"/>
-                <ColumnDefinition Width="70"/>
-            </Grid.ColumnDefinitions>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="52"/>
-                <RowDefinition Height="52"/>
-                <RowDefinition Height="52"/>
-                <RowDefinition Height="52"/>
-                <RowDefinition Height="52"/>
-                <RowDefinition Height="52"/>
-                <RowDefinition Height="70"/>
-            </Grid.RowDefinitions>
-            
-          
-            
-            
-             <Border Name="Box00" Grid.Row="1" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle00" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box01" Grid.Row="1" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                <TextBlock Name="Rectangle01" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box02" Grid.Row="1" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle02" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box03" Grid.Row="1" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle03" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box04" Grid.Row="1" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle04" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-            
-            
-             <Border Name="Box10" Grid.Row="2" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle10" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box11" Grid.Row="2" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle11" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box12" Grid.Row="2" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle12" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box13" Grid.Row="2" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle13" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box14" Grid.Row="2" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle14" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-            
-            
-             <Border Name="Box20" Grid.Row="3" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle20" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box21" Grid.Row="3" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle21" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box22" Grid.Row="3" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle22" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box23" Grid.Row="3" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle23" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box24" Grid.Row="3" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle24" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-            
-           
-             <Border Name="Box30" Grid.Row="4" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle30" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box31" Grid.Row="4" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle31" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box32" Grid.Row="4" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle32" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box33" Grid.Row="4" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle33" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box34" Grid.Row="4" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle34" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-            
-            
-             <Border Name="Box40" Grid.Row="5" Grid.Column="1" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle40" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box41" Grid.Row="5" Grid.Column="2" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle41" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box42" Grid.Row="5" Grid.Column="3" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle42" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box43" Grid.Row="5" Grid.Column="4" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle43" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box44" Grid.Row="5" Grid.Column="5" BorderBrush="Black"  Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle44" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-            
-           
-             <Border Name="Box50" Grid.Row="6" Grid.Column="1" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle50" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box51" Grid.Row="6" Grid.Column="2" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle51" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box52" Grid.Row="6" Grid.Column="3" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle52" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box53" Grid.Row="6" Grid.Column="4" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle53" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-             <Border Name="Box54" Grid.Row="6" Grid.Column="5" BorderBrush="Black" Height="50" Width="50" Background="#333333" BorderThickness="2">
-                 <TextBlock Name="Rectangle54" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-             </Border>
-            
-        </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Wordle" Grid.Column="1" FontSize="40" Foreground="White" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Margin="0,10,0,0" MouseLeftButtonDown="WORDLE_OnMouseLeftButtonDown" />
         
-          
-            
-        <ItemsControl Name="KeyBoard0" Grid.Row="2" Grid.Column="1">
+        <TextBlock Text="Click on Wordle to reset" Grid.Column="2" FontSize="10" Foreground="White" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Margin="-100,-10,0,0"  />
+
+        <ItemsControl Name="WordleGameGrid" Grid.Row="1" Grid.Column="1">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="52" />
+                            <RowDefinition Height="52" />
+                            <RowDefinition Height="52" />
+                            <RowDefinition Height="52" />
+                            <RowDefinition Height="52" />
+                            <RowDefinition Height="52" />
+                            <RowDefinition Height="70" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="52" />
+                            <ColumnDefinition Width="52" />
+                            <ColumnDefinition Width="52" />
+                            <ColumnDefinition Width="52" />
+                            <ColumnDefinition Width="52" />
+                            <ColumnDefinition Width="70" />
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ItemsPanelTemplate>
-                
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="Grid.Column" Value="{Binding Column}" />
+                    <Setter Property="Grid.Row" Value="{Binding Row}" />
                 </Style>
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                        <Border Background="{Binding Color}" Height="45" Width="35" CornerRadius="7" Margin="2">
-                            <TextBlock Text="{Binding KeyName}" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>  
-        
-        
-        <ItemsControl Name="KeyBoard1" Grid.Row="3" Grid.Column="1">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ItemsPanelTemplate>
-                
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemContainerStyle>
-                <Style>
-                    <Setter Property="Grid.Column" Value="{Binding Column}" />
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Border  Background="{Binding Color}" Height="45" Width="35" CornerRadius="7" Margin="{Binding Margin}">
-                        <TextBlock Text="{Binding KeyName}" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border BorderBrush="Gray" Height="50" Width="50" Background="{Binding Color}" BorderThickness="2">
+                        <TextBlock Text="{Binding Key}" FontSize="30" Foreground="White" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
                     </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl> 
-        
-        
-        <ItemsControl Name="KeyBoard2" Grid.Row="4" Grid.Column="1">
+        </ItemsControl>
+
+        <ItemsControl Name="KeyBoard" Grid.Row="2" Grid.Column="1">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -257,20 +95,23 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ItemsPanelTemplate>
-                
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="Grid.Column" Value="{Binding Column}" />
+                    <Setter Property="Grid.Row" Value="{Binding Row}" />
                 </Style>
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border  Background="{Binding Color}" Height="45" Width="{Binding Width}" CornerRadius="7" Margin="2">
-                        <TextBlock Text="{Binding KeyName}" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border Background="{Binding Color, Mode=TwoWay}" Height="45" Width="{Binding Width}"
+                            CornerRadius="7" Margin="{Binding Margin}"
+                            MouseLeftButtonDown="VirtualKeyBoard_OnMouseLeftButtonDown">
+                        <TextBlock Text="{Binding KeyName}" FontSize="20" Foreground="White"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl> 
+        </ItemsControl>
     </Grid>
 </Window>
