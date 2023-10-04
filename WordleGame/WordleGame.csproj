@@ -10,15 +10,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Page Include="words_alpha.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Page>
+
 
       <Resource Include="wordle.ico" />
 
-      <None Remove="words_alpha.txt" />
 
-      <Resource Include="words_alpha.txt" />
+
+      <None Remove="combined_wordlist.txt" />
+
+      <Resource Include="combined_wordlist.txt" />
     </ItemGroup>
 
 

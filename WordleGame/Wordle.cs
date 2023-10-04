@@ -18,7 +18,7 @@ public class Wordle
 
     public Wordle()
     {
-        Uri uri = new Uri("/words_alpha.txt", UriKind.Relative);
+        Uri uri = new Uri("/combined_wordlist.txt", UriKind.Relative);
         StreamResourceInfo info = Application.GetResourceStream(uri);
         Stream stream = info.Stream;
         StreamReader reader = new StreamReader(stream);

@@ -7,7 +7,6 @@ public partial class MainWindow
 {
     private readonly Helper _helper;
 
-
     public MainWindow()
     {
         InitializeComponent();

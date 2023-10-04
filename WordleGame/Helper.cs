@@ -13,11 +13,15 @@ public class Helper
     private Wordle Wordle { get; set; }
     private List<KeyboardItem> KeyList { get; set; }
     private List<WordleItem> WordleList { get; set; }
+    
+    private CustomMessageBox CustomMessageBox { get; set; }
+    private bool blockInput { get; set; }
 
 
     public Helper()
     {
-         Wordle = new();
+        blockInput = false;
+        Wordle = new();
         Solution = Wordle.GetSolution();
         CurrentPos = (0, 0);
         AllowedKeys = new()
@@ -118,7 +122,8 @@ public class Helper
             new KeyboardItem() {KeyName = "Enter", Key = Key.Enter, Row = 2, Column = 0, Width = 55},
             new KeyboardItem() {KeyName = "Del", Key = Key.Back, Row = 2, Column = 8, Width = 55},
         };
-
+        CustomMessageBox = new CustomMessageBox();
+        CustomMessageBox.Hide();
     }
     
     public List<WordleItem> GetWordleList()
@@ -133,6 +138,8 @@ public class Helper
 
     internal void KeyInputHandler(Key e)
     {
+        if(blockInput)
+            return;
         if (e == Key.Enter && CurrentPos.Item2 == 5)
         {
             StringBuilder sb = new();
@@ -236,17 +243,25 @@ public class Helper
         switch (Wordle.CheckGuess(guess))
         {
             case 0: //invalid
-                MessageBox.Show("Not a word");
+                CustomMessageBox.Show("Not a word");
                 DeleteLine();
                 return false;
 
             case 1: //valid but not solution
-                MessageBox.Show("Not the solution");
+                if (CurrentPos.Item1 == 5)
+                {
+                    CustomMessageBox.Show($"You Lost! The solution was {Solution}");
+                    SetColor(guess);
+                    blockInput = true;
+                    return true;
+                }
+
+                CustomMessageBox.Show("Not the solution");
                 SetColor(guess);
                 return true;
 
             case 2: //solution
-                MessageBox.Show("Correct! You win!");
+                CustomMessageBox.Show("Correct! You win!");
                 SetColor(guess);
                 return true;
 
@@ -264,6 +279,8 @@ public class Helper
     }
     public void Reset()
     {
+        blockInput = false;
+        
         Wordle = new();
 
         Solution = Wordle.GetSolution();
